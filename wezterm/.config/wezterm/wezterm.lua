@@ -88,6 +88,19 @@ config.keys = {
         action = wezterm.action.ActivateTabRelative(-1)
     },
     {
+        -- rename tab
+        mods = "LEADER",
+        key = "r",
+        action = wezterm.action.PromptInputLine {
+            description = "Enter new name for tab",
+            action = wezterm.action_callback(function(window, _, line)
+                if line then
+                    window:active_tab():set_title(line)
+                end
+            end),
+        },
+    },
+    {
         -- focus next tab
         mods = "LEADER",
         key = ".",
