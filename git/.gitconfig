@@ -1,0 +1,20 @@
+[credential]
+	helper = store
+[user]
+	email = diego.perez@wallbox.com
+	name = diego.perezurbina
+[alias]
+	logo = log --oneline
+	co = "!f() { git fetch && git checkout $1; }; f"
+	last = log -1 HEAD
+	st = status
+	changes = show --stat
+	rb = rebase origin/develop
+	rbc = rebase --continue
+	rba = rebase --abort
+	dev = checkout develop
+	cp = cherry-pick
+	s = stash --include-untracked
+	sp = stash pop
+[core]
+	editor = nvim
